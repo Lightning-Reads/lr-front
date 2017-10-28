@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 
-import { AnalysisResult } from './analysis-result';
-import { StructuredText } from './structured-text';
-import { WordLink } from './word-link';
+import { AnalysisResult } from './types/analysis-result';
+import { StructuredText } from './types/structured-text';
+import { WordLink } from './types/word-link';
 
 
 @Injectable()
