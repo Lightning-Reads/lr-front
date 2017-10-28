@@ -1,21 +1,38 @@
+p{
+	margin-bottom:10px;
+}
+
 .highlight {
-	background-color: green;
+	background-color: #ffff4e;
 	position:relative;
 }
 
 .highlight:hover .wordhover {
 	display:inline-block;
-	position:absolute;
-	background-color:white;
+	animation-name: wordhover;
+	animation-duration: 0.5s;
 }
 
 .wordhover:hover {
 	display:inline-block;
-	position:absolute;
-	background-color:white;
-	box-shadow: 0px 0px 4px 2px #000000;
 }
 
 .wordhover {
 	display:none;
+	position:absolute;
+	left:-9px;
+	top:-15px;
+	cursor:default;
+	background-color:white;
+	box-shadow: 0px 0px 10px #000000;
+	z-index:1;
+	padding:7px;
+	white-space: nowrap;
+	min-width:100px;
+	max-width:1000px;
+}
+
+@keyframes wordhover {
+    0%   {opacity:0;}
+    100% {opacity:1;}
 }

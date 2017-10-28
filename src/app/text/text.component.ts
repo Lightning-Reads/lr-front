@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { WordLink } from './../types/word-link';
-import { WordLinkHoverComponent } from './../wordlinkhover/wordlinkhover.component';
 import { StructuredText } from './../types/structured-text';
 
 @Component({
@@ -11,6 +10,7 @@ import { StructuredText } from './../types/structured-text';
 export class TextComponent {
 	@Input() importantWords = []
 	@Input() helpfulLinks: WordLink[]
+	@Input() imageLinks: WordLink[]
 	@Input() title = ""
 	@Input() inputArray: string[]
 	formattedParagraphs: Object[] = new Array(0);
@@ -28,8 +28,18 @@ export class TextComponent {
 						break
 					}
 				}
-				if(this.importantWords.indexOf(word) != -1) {
-					currentFParagraph.push({word: word, isHighlighted: true, url: url})
+				var link = ""
+				for (var j = 0; j < this.imageLinks.length; j++){
+					if(word == this.imageLinks[j].word){
+						link = this.imageLinks[j].url
+						break
+					}
+				}
+				if(this.importantWords.indexOf(word) != -1 && (url != "" || link != "")) {
+					currentFParagraph.push({word: word, isHighlighted: true, hasPopup: true, url: url, link: link})
+				}
+				else if(this.importantWords.indexOf(word) != -1){
+					currentFParagraph.push({word: word, isHighlighted: true, hasPopup: false, url: url, link: link})	
 				}
 				else {
 					currentFParagraph.push({word: word, isHighlighted: false})
