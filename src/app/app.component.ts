@@ -1,4 +1,8 @@
 import { Component } from '@angular/core'
+import { AnalysisService } from './analysis.service'
+import { TextComponent } from './text/text.component'
+import { AnalysisResult } from './types/analysis-result'
+import { StructuredText } from './types/structured-text'
 
 import { AnalysisService } from './analysis.service'
 import { AnalysisResult } from './types/analysis-result'
@@ -35,5 +39,13 @@ export class AppComponent {
   reset() {
       this.showResult = false
       this.showInput = true
+  }
+  texts: AnalysisResult
+
+  constructor(private analysisService: AnalysisService) {
+  }
+
+  ngOnInit(){
+  	this.texts = this.analysisService.getData('', [''])
   }
 }
