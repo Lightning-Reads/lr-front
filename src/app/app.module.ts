@@ -6,7 +6,6 @@ import { AppComponent } from './app.component'
 import { StructuredTextInputComponent } from './structured-text-input/structured-text-input.component'
 import { LoadAnimationComponent } from './load-animation/load-animation.component'
 import { TextComponent } from './text/text.component';
-import { WordLinkHoverComponent } from './wordlinkhover/wordlinkhover.component'
 import { AnalysisService } from './analysis.service';
 
 import { AnalysisService } from './analysis.service'
@@ -17,9 +16,7 @@ import { AnalysisService } from './analysis.service'
     AppComponent,
     StructuredTextInputComponent,
     LoadAnimationComponent
-    TextComponent,
-    WordLinkHoverComponent
-  ],
+    TextComponent,  ],
   imports: [
     BrowserModule,
     FormsModule
