@@ -5,15 +5,37 @@
             <h1 class="title">
                 Welcome to {{title}}!
             </h1>
-            <h2 class="subtitle">
+            <h2 class="subtitle" *ngIf="showInput">
                 Let's do this!
             </h2>
+            <div *ngIf="showResult" style="margin-top: -10px; margin-bottom: -22px;">
+                <a class="button is-light" (click)="reset()">
+                    <span class="icon">
+                        <i class="fa fa-chevron-circle-left"></i>
+                    </span>
+                    <span>Reset</span>
+                </a>
+            </div>
         </div>
     </div>
 </section>
 
 <section class="section">
     <div class="container is-fluid">
-        <app-structured-text-input></app-structured-text-input>
+        <div *ngIf="showInput">
+            <app-structured-text-input></app-structured-text-input>
+            <a class="button is-primary" (click)="sendText()">
+                <span class="icon">
+                    <i class="fa fa-chevron-circle-right"></i>
+                </span>
+                <span>Analyze!</span>
+            </a>
+        </div>
+        <div *ngIf="showLoading">
+            <app-load-animation></app-load-animation>
+        </div>
+        <div *ngIf="showResult">
+            kek
+        </div>
     </div>
 </section>

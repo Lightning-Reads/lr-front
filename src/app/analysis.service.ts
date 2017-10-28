@@ -1,8 +1,11 @@
-import { Injectable } from '@angular/core';
+import { Injectable } from '@angular/core'
 
-import { AnalysisResult } from './types/analysis-result';
-import { StructuredText } from './types/structured-text';
-import { WordLink } from './types/word-link';
+import { Observable } from 'rxjs/Observable'
+import "rxjs/add/observable/of"
+
+import { AnalysisResult } from './types/analysis-result'
+import { StructuredText } from './types/structured-text'
+import { WordLink } from './types/word-link'
 
 
 @Injectable()
@@ -10,7 +13,7 @@ export class AnalysisService {
 
     constructor() {}
 
-    getData(title: string, paragraphs: [string]): AnalysisResult {
+    getData(title: string, paragraphs: [string]): Observable<AnalysisResult> {
         const res = new AnalysisResult();
         res.baseText = new StructuredText(
             'Campus Hackathon Darmstadt 27.-29.10.2017',
@@ -26,15 +29,15 @@ export class AnalysisService {
             'Intelligence',
             'Open',
             'Source',
-        ];
+        ]
         res.helpfulLinks = [
             new WordLink('Hackathon', 'https://www.campus-hackathon.de/darmstadt-2017/' ),
             new WordLink('Open', 'https://github.com/Lightning-Reads'),
-        ];
+        ]
         res.imageLinks = [
             new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),
-        ];
+        ]
 
-        return res;
+        return Observable.of(res)
     }
 }

@@ -1,20 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser'
+import { FormsModule }   from '@angular/forms'
+import { NgModule } from '@angular/core'
 
-import { AppComponent } from './app.component';
-import { StructuredTextInputComponent } from './structured-text-input/structured-text-input.component';
+import { AppComponent } from './app.component'
+import { StructuredTextInputComponent } from './structured-text-input/structured-text-input.component'
+import { LoadAnimationComponent } from './load-animation/load-animation.component'
+
+import { AnalysisService } from './analysis.service'
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    StructuredTextInputComponent
+    StructuredTextInputComponent,
+    LoadAnimationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AnalysisService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
