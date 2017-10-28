@@ -35,10 +35,13 @@
             <app-load-animation></app-load-animation>
         </div>
         <div *ngIf="showResult">
-            kek
+            <text
+                [importantWords]="result.importantWords"
+                [helpfulLinks]="result.helpfulLinks"
+                [title]="result.baseText.title"
+                [inputArray]="result.baseText.paragraphs"
+                [imageLinks]="result.imageLinks"
+            ></text>
         </div>
     </div>
 </section>
-
-        <text [importantWords]="texts.importantWords" [helpfulLinks]="texts.helpfulLinks" [title]="texts.baseText.title" [inputArray]="texts.baseText.paragraphs" [imageLinks]="texts.imageLinks">
-        </text>

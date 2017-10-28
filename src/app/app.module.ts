@@ -5,9 +5,7 @@ import { NgModule } from '@angular/core'
 import { AppComponent } from './app.component'
 import { StructuredTextInputComponent } from './structured-text-input/structured-text-input.component'
 import { LoadAnimationComponent } from './load-animation/load-animation.component'
-import { TextComponent } from './text/text.component';
-import { AnalysisService } from './analysis.service';
-
+import { TextComponent } from './text/text.component'
 import { AnalysisService } from './analysis.service'
 
 
@@ -15,11 +13,12 @@ import { AnalysisService } from './analysis.service'
   declarations: [
     AppComponent,
     StructuredTextInputComponent,
-    LoadAnimationComponent
-    TextComponent,  ],
+    LoadAnimationComponent,
+    TextComponent,
+  ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [AnalysisService],
   bootstrap: [AppComponent]
