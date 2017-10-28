@@ -4,7 +4,7 @@ import { WordLink } from './word-link';
 
 export class AnalysisResult {
     baseText: StructuredText;
-    importantWords: [String];
-    helpfulLinks: [WordLink];
-    imageLinks: [WordLink];
+    importantWords: string[];
+    helpfulLinks: WordLink[];
+    imageLinks: WordLink[];
 }

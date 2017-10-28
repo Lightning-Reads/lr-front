@@ -1,0 +1,13 @@
+<section>
+	<p *ngFor="let el of formattedParagraphs">
+		<span *ngFor="let word of el">
+			<span *ngIf="word.isHighlighted; else notHighlighted" class="highlight">{{word.word}}
+				<div *ngIf="word.url != ''" class="wordhover">
+					{{word}}<br>
+					URL: {{word.url}}
+				</div>
+			</span>
+			<ng-template #notHighlighted>{{word.word}}</ng-template>
+		</span>
+	</p>
+</section>

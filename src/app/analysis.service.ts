@@ -10,7 +10,7 @@ export class AnalysisService {
 
     constructor() {}
 
-    getData(title: string, paragraphs: [string]): AnalysisResult {
+    getData(title: string, paragraphs: string[]): AnalysisResult {
         const res = new AnalysisResult();
         res.baseText = new StructuredText(
             'Campus Hackathon Darmstadt 27.-29.10.2017',
