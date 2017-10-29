@@ -34,6 +34,8 @@ export class AnalysisService {
         res.helpfulLinks = [
             new WordLink('Hackathon', 'https://www.campus-hackathon.de/darmstadt-2017/' ),
             new WordLink('Open', 'https://github.com/Lightning-Reads'),
+            new WordLink('Damrstadt', 'https://en.wikipedia.org/wiki/Darmstadt' ),
+            new WordLink('Google News', 'http://www.kicker.de/news/fussball/2bundesliga/startseite/709235/artikel_darmstadt-98-vermeldet-rekordgewinn.html'),
         ];
         res.imageLinks = [
             new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),

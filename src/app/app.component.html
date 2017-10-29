@@ -35,6 +35,9 @@
             <app-load-animation></app-load-animation>
         </div>
         <div *ngIf="showResult">
+            <app-link-list
+                [links]="result.helpfulLinks"
+            ></app-link-list>
             <text
                 [importantWords]="result.importantWords"
                 [helpfulLinks]="result.helpfulLinks"

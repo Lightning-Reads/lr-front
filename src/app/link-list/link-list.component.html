@@ -1,0 +1,14 @@
+<section>
+	
+		<ul>
+		   <li *ngFor="let el of links">
+		   	<div *ngIf="el.url.includes('wikipedia')">
+		   		<i class="fa fa-wikipedia-w" aria-hidden="true"></i>   <a href="{{el.url}}">{{el.word}}</a> 
+		   	</div>
+		   	<div *ngIf="!el.url.includes('wikipedia')">
+		   		<i class="fa fa-newspaper-o" aria-hidden="true"></i>   <a href="{{el.url}}">{{el.word}}</a> 
+		   	</div>
+		   </li>
+		</ul>
+<br/>
+</section>
