@@ -2,18 +2,16 @@
 <section class="hero is-primary">
     <div class="hero-body">
         <div class="container">
-            <h1 class="title">
-                Welcome to {{title}}!
-            </h1>
-            <h2 class="subtitle" *ngIf="showInput">
-                Let's do this!
+            <img src="../assets/logo.png" style="height: 100px; width: auto;">
+            <h2 class="subtitle" style="margin-top: 10px;" *ngIf="showInput">
+                Understand any text. <span style="color: #f1c40f;">Lightning</span> Fast.
             </h2>
-            <div *ngIf="showResult" style="margin-top: -10px; margin-bottom: -22px;">
+            <div *ngIf="showResult" style="margin-top: 10px; margin-bottom: -15px;">
                 <a class="button is-light" (click)="reset()">
                     <span class="icon">
                         <i class="fa fa-chevron-circle-left"></i>
                     </span>
-                    <span>Reset</span>
+                    <span>new Text</span>
                 </a>
             </div>
         </div>
@@ -35,13 +33,13 @@
             <app-load-animation></app-load-animation>
         </div>
         <div *ngIf="showResult">
-            
+
         <app-word-cloud
                 [importedWords]="result.importantWords"
             ></app-word-cloud>
             <app-link-list
                 [links]="result.helpfulLinks"
-            ></app-link-list>        
+            ></app-link-list>
             <pictures [pictureLinks]="result.imageLinks"></pictures>
             <summary [summaryText]="result.summary"></summary>
             <text
