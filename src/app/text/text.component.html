@@ -1,15 +1,15 @@
 <section>
 	<p *ngFor="let el of formattedParagraphs">
 		<span *ngFor="let word of el">
-			<span *ngIf="word.isHighlighted; else notHighlighted" class="highlight">{{word.word}}<!--
-			 --><div *ngIf="word.hasPopup" class="wordhover"><!--
-				 --><font style="font-size:1.5em">{{word.word}}</font><br><!--
-				 --><figure *ngIf="word.link != ''" class="image picture"><!--
-					 --><img src="{{word.link}}" alt=""><!--
-				 --></figure><!--
-				 --><span *ngIf="word.url != ''"> URL: <a href="{{word.url}}">{{word.url}}</a></span><!--
-			 --></div><!--
-		 --></span>
+			<span *ngIf="word.isHighlighted; else notHighlighted" class="highlight">{{word.word}}
+				<div *ngIf="word.hasPopup" class="wordhover">
+					<font style="font-size:1.5em">{{word.word}}</font><br>
+					<figure *ngIf="word.link != ''" class="image picture">
+						<img src="{{word.link}}" alt="">
+					</figure>
+					<span *ngIf="word.url != ''"> URL: <a href="{{word.url}}">{{word.url}}</a></span>
+				</div>
+			</span>
 			<ng-template #notHighlighted>{{word.word}}</ng-template>
 		</span>
 	</p>
