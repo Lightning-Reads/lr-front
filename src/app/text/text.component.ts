@@ -14,49 +14,55 @@ export class TextComponent {
 	@Input() imageLinks: WordLink[]
 	@Input() title = ""
 	@Input() rawText: string
+
 	formattedParagraphs: Object[] = new Array(0);
+	inputArray: string[];
 
 	ngOnInit(){
-		let paragraph = this.rawText.split(" ")
-		let currentFParagraph: Object[] = new Array(0);
-		for (var k = 0; k < paragraph.length; k++){
-			let word = paragraph[k]
+		this.inputArray = this.rawText.split('\n');
 
-			var isImportant = false
-			for (let j = 0; j < this.importantWords.length; j++) {
-				if (word == this.importantWords[j].word) {
-					isImportant = true
-					break
-				}
-			}
+		for(var i = 0; i < this.inputArray.length; i++){
+			let paragraph = this.inputArray[i].split(" ")
+			let currentFParagraph: Object[] = new Array(0);
+			for (var k = 0; k < paragraph.length; k++){
+				let word = paragraph[k]
 
-			if (isImportant) {
-				var url = ""
-				for (var j = 0; j < this.helpfulLinks.length; j++){
-					if(word == this.helpfulLinks[j].word){
-						url = this.helpfulLinks[j].url
-						break
-					}
-				}
-				var link = ""
-				for (var j = 0; j < this.imageLinks.length; j++){
-					if(word == this.imageLinks[j].word){
-						link = this.imageLinks[j].url
+				var isImportant = false
+				for (let j = 0; j < this.importantWords.length; j++) {
+					if (word == this.importantWords[j].word) {
+						isImportant = true
 						break
 					}
 				}
 
-				if(url != "" || link != "") {
-					currentFParagraph.push({word: word, isHighlighted: true, hasPopup: true, url: url, link: link})
+				if (isImportant) {
+					var url = ""
+					for (var j = 0; j < this.helpfulLinks.length; j++){
+						if(word == this.helpfulLinks[j].word){
+							url = this.helpfulLinks[j].url
+							break
+						}
+					}
+					var link = ""
+					for (var j = 0; j < this.imageLinks.length; j++){
+						if(word == this.imageLinks[j].word){
+							link = this.imageLinks[j].url
+							break
+						}
+					}
+
+					if(url != "" || link != "") {
+						currentFParagraph.push({word: word, isHighlighted: true, hasPopup: true, url: url, link: link})
+					}
+					else {
+						currentFParagraph.push({word: word, isHighlighted: true, hasPopup: false, url: url, link: link})
+					}
 				}
 				else {
-					currentFParagraph.push({word: word, isHighlighted: true, hasPopup: false, url: url, link: link})
+					currentFParagraph.push({word: word, isHighlighted: false})
 				}
 			}
-			else {
-				currentFParagraph.push({word: word, isHighlighted: false})
-			}
+			this.formattedParagraphs.push(currentFParagraph)
 		}
-		this.formattedParagraphs.push(currentFParagraph)
 	}
 }
