@@ -37,7 +37,10 @@
         <div *ngIf="showResult">
         <app-word-cloud
                 [importedWords]="result.importantWords"
-            ></app-word-cloud>        <pictures [pictureLinks]="result.imageLinks">        </pictures>            <text
+            ></app-word-cloud>        
+            <pictures [pictureLinks]="result.imageLinks"></pictures>
+            <summary [summaryText]="result.summary"></summary>
+            <text
                 [importantWords]="result.importantWords"
                 [helpfulLinks]="result.helpfulLinks"
                 [title]="result.baseText.title"

@@ -62,7 +62,8 @@ export class AnalysisService {
             new WordLink('Intelligence', 'http://bloggermymaze.files.wordpress.com/2009/09/klassisch_quadratisch_mittig_600.jpg'),
             new WordLink('Intelligence', 'http://bloggermymaze.files.wordpress.com/2009/09/klassisch_quadratisch_mittig_600.jpg'),
             new WordLink('Intelligence', 'http://bloggermymaze.files.wordpress.com/2009/09/klassisch_quadratisch_mittig_600.jpg'),
-        ]
+        ];
+        res.summary = "Sowohl Artificial Intelligence als auch Open Source Software sind zwei riesige Trends, die Entwicklungsprozesse von heute radikal verändern werden. Beim Campus Hackathon entstehen Tools, die beides miteinander vereinen. Beim Campus Hackathon hast Du 24 Stunden Zeit um eine Idee unter Zeitdruck in Code umzusetzen. Ein Team besteht idealerweise aus Konzeptern, Programmierern und Webdesignern. Unterstützung bei der Ideenfindung und der Umsetzung erhältst Du von erfahrenen Mentoren unserer Partnerunternehmen."
 
         return Observable.of(res);
     }

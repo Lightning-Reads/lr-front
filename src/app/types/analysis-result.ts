@@ -9,4 +9,5 @@ export class AnalysisResult {
     importantWords: RatedWord[];
     helpfulLinks: WordLink[];
     imageLinks: WordLink[];
+    summary: string
 }
