@@ -35,9 +35,15 @@
             <app-load-animation></app-load-animation>
         </div>
         <div *ngIf="showResult">
+            
+        <app-word-cloud
+                [importedWords]="result.importantWords"
+            ></app-word-cloud>
             <app-link-list
                 [links]="result.helpfulLinks"
-            ></app-link-list>
+            ></app-link-list>        
+            <pictures [pictureLinks]="result.imageLinks"></pictures>
+            <summary [summaryText]="result.summary"></summary>
             <text
                 [importantWords]="result.importantWords"
                 [helpfulLinks]="result.helpfulLinks"
