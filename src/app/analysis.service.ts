@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core'
+import { Injectable } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable'
-import "rxjs/add/observable/of"
+import { Observable } from 'rxjs/Observable';
+import "rxjs/add/observable/of";
 
-import { AnalysisResult } from './types/analysis-result'
-import { StructuredText } from './types/structured-text'
-import { WordLink } from './types/word-link'
+import { AnalysisResult } from './types/analysis-result';
+import { StructuredText } from './types/structured-text';
+import { RatedWord } from './types/rated-word';
+import { WordLink } from './types/word-link';
 
 
 @Injectable()
@@ -23,17 +24,17 @@ export class AnalysisService {
             ]
         );
         res.importantWords = [
-            'Campus',
-            'Hackathon',
-            'Artificial',
-            'Intelligence',
-            'Open',
-            'Source',
-        ]
+            new RatedWord('Campus', 0.9),
+            new RatedWord('Hackathon', 0.95),
+            new RatedWord('Artificial', 0.8),
+            new RatedWord('Intelligence', 0.7),
+            new RatedWord('Open', 0.8),
+            new RatedWord('Source', 0.81),
+        ];
         res.helpfulLinks = [
             new WordLink('Hackathon', 'https://www.campus-hackathon.de/darmstadt-2017/' ),
             new WordLink('Open', 'https://github.com/Lightning-Reads'),
-        ]
+        ];
         res.imageLinks = [
             new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),
             new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),
@@ -63,6 +64,6 @@ export class AnalysisService {
             new WordLink('Intelligence', 'http://bloggermymaze.files.wordpress.com/2009/09/klassisch_quadratisch_mittig_600.jpg'),
         ]
 
-        return Observable.of(res)
+        return Observable.of(res);
     }
 }
