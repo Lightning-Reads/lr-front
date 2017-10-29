@@ -13,23 +13,26 @@ import { RatedWord } from '../types/rated-word';
 export class WordCloudComponent implements OnInit {
     @Input() importedWords: RatedWord[];
 
+    showCloud = true;
+    showList = false;
+
     wordData: Array<AgWordCloudData> = new Array(0);
 
     options = {
         settings: {
-            minFontSize: 10,
-            maxFontSize: 100,
+            minFontSize: 25,
+            maxFontSize: 50,
         },
         margin: {
-            top: 10,
-            right: 10,
-            bottom: 10,
-            left: 10
+            top: 0,
+            right: 0,
+            bottom: 0,
+            left: 0
         },
-        labels: true // false to hide hover labels
+        labels: false
     };
 
-    colors: string[] = ['#FFFD04', '#E8CF03', '#FFCD10', '#E8A103', '#FF9804'];
+    colors: string[] = ['#f7dc71', '#E8CF03', '#FFCD10', '#e8aa03', '#f2c93d', '#d9ef22', '#e9e049'];
 
   constructor() { }
 
@@ -37,9 +40,23 @@ export class WordCloudComponent implements OnInit {
       for (let i = 0; i < this.importedWords.length; i++) {
           let el = this.importedWords[i];
           this.wordData.push(
-              {size: el.importance * 100, text: el.word}
+              {size: el.importance, text: el.word}
           );
       }
+  }
+
+  switchToCloud() {
+    this.showCloud = true;
+    this.showList = false;
+  }
+
+  switchToList() {
+    this.showList = true;
+    this.showCloud = false;
+  }
+
+  getRndColor() {
+    return this.colors[Math.floor(Math.random() * this.colors.length)];
   }
 
 }

@@ -1,4 +1,42 @@
-<section>
-    <h1 class="subtitle is-4">The {{importedWords.length}} Most Important Words</h1>
+<section *ngIf="showCloud">
+    <div class="columns">
+        <div class="column">
+            <h1 class="subtitle is-4">The {{importedWords.length}} Most Important Words</h1>
+        </div>
+        <div class="column">
+            <a class="button is-light" style="float: right;" (click)="switchToList()">
+                <span class="icon">
+                    <i class="fa fa-list"></i>
+                </span>
+                <span>show as List</span>
+            </a>
+        </div>
+    </div>
+
     <div AgWordCloud [wordData]="wordData" [options]="options" [color]="colors"></div>
+</section>
+
+<section *ngIf="showList">
+    <div class="columns">
+        <div class="column">
+            <h1 class="subtitle is-4">The {{importedWords.length}} Most Important Words</h1>
+        </div>
+        <div class="column">
+            <a class="button is-light" style="float: right;" (click)="switchToCloud()">
+                <span class="icon">
+                    <i class="fa fa-cloud"></i>
+                </span>
+                <span>show as Word Cloud</span>
+            </a>
+        </div>
+    </div>
+
+    <div style="margin-bottom: 50px;">
+        <p *ngFor="let word of importedWords"
+        [style.font-size.em]="word.importance * 1.5"
+        [style.color]="getRndColor()"
+    >
+        {{word.word}}
+    </p>
+    </div>
 </section>
