@@ -9,8 +9,11 @@ import { StructuredTextInputComponent } from './structured-text-input/structured
 import { LoadAnimationComponent } from './load-animation/load-animation.component'
 import { TextComponent } from './text/text.component'
 import { AnalysisService } from './analysis.service';
-import { WordCloudComponent } from './word-cloud/word-cloud.component'
+import { LinkListComponent } from './link-list/link-list.component'
 
+import { WordCloudComponent } from './word-cloud/word-cloud.component'
+import { PicturesComponent } from './pictures/pictures.component';
+import { SummaryComponent } from './summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +21,10 @@ import { WordCloudComponent } from './word-cloud/word-cloud.component'
     StructuredTextInputComponent,
     LoadAnimationComponent,
     TextComponent,
+    LinkListComponent,
     WordCloudComponent,
-  ],
+    PicturesComponent,
+    SummaryComponent],
   imports: [
     BrowserModule,
     FormsModule,
