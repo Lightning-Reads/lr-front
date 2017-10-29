@@ -1,7 +1,8 @@
 <section>
 	<p *ngFor="let el of formattedParagraphs">
 		<span *ngFor="let word of el">
-			<span *ngIf="word.isHighlighted; else notHighlighted" class="highlight">{{word.word}}
+			<span *ngIf="word.isHighlighted; else notHighlighted">
+				<span class="highlight">{{word.word}}</span>
 				<div *ngIf="word.hasPopup" class="wordhover">
 					<font style="font-size:1.5em">{{word.word}}</font><br>
 					<figure *ngIf="word.link != ''" class="image picture">
