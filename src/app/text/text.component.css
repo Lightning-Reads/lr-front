@@ -5,6 +5,8 @@ p{
 .highlight {
 	background-color: #ffff4e;
 	position:relative;
+	padding-right: -4px;
+	border-radius:4px;
 }
 
 .picture{
