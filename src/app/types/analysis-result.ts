@@ -5,7 +5,7 @@ import { RatedWord } from './rated-word';
 
 
 export class AnalysisResult {
-    baseText: StructuredText;
+    baseText: string;
     importantWords: RatedWord[];
     helpfulLinks: WordLink[];
     imageLinks: WordLink[];

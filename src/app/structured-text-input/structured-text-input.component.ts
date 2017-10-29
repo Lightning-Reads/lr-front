@@ -13,4 +13,11 @@ export class StructuredTextInputComponent implements OnInit {
     ngOnInit() {
     }
 
+    getText():string {
+        return this.wholeText;
+    }
+
+    clearText() {
+        this.wholeText = '';
+    }
 }

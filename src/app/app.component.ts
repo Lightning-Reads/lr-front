@@ -1,9 +1,10 @@
-import { Component } from '@angular/core'
+import { Component, ViewChild } from '@angular/core'
 
 import { AnalysisService } from './analysis.service'
 import { AnalysisResult } from './types/analysis-result'
 import { TextComponent } from './text/text.component'
 import { StructuredText } from './types/structured-text'
+import { StructuredTextInputComponent } from './structured-text-input/structured-text-input.component'
 
 
 @Component({
@@ -12,7 +13,7 @@ import { StructuredText } from './types/structured-text'
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Lightning Reads'
+   @ViewChild(StructuredTextInputComponent) input: StructuredTextInputComponent;
 
   result: AnalysisResult
 
@@ -26,12 +27,21 @@ export class AppComponent {
       this.showInput = false
       this.showLoading = true
 
-      this.analysisService.getData('', ['']).subscribe(data => {
-          this.result = data
+      this.analysisService.getData(this.input.getText())
+        .subscribe(data => {
+            this.result = data
 
-          this.showLoading = false
-          this.showResult = true
-      });
+            console.log(data)
+
+            this.showLoading = false
+            this.showResult = true
+        }
+        , err => {
+          console.log(err);
+          window.alert('Sorry, something went wrong.\n\nPlease try again later :/');
+          this.reset();
+        }
+      );
   }
 
   reset() {
