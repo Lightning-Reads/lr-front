@@ -36,6 +36,31 @@ export class AnalysisService {
         ]
         res.imageLinks = [
             new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),
+            new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),
+            new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),
+            new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),
+            new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),
+            new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),
+            new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),
+            new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),
+            new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),
+            new WordLink('Campus', 'http://vorhang-auf.com/wp-content/uploads/2016/10/Bild-Coolworking.jpg'),
+            new WordLink('Source', 'http://heise.cloudimg.io/width/700/q75.webp-lossy-75.foil1/_www-heise-de_/foto/imgs/13/2/1/4/7/4/6/8/bilder-der-woche-8-schwarzer-kater_16-9-d9944b7218d8b7a9.jpeg'),
+            new WordLink('Source', 'http://heise.cloudimg.io/width/700/q75.webp-lossy-75.foil1/_www-heise-de_/foto/imgs/13/2/1/4/7/4/6/8/bilder-der-woche-8-schwarzer-kater_16-9-d9944b7218d8b7a9.jpeg'),
+            new WordLink('Source', 'http://heise.cloudimg.io/width/700/q75.webp-lossy-75.foil1/_www-heise-de_/foto/imgs/13/2/1/4/7/4/6/8/bilder-der-woche-8-schwarzer-kater_16-9-d9944b7218d8b7a9.jpeg'),
+            new WordLink('Source', 'http://heise.cloudimg.io/width/700/q75.webp-lossy-75.foil1/_www-heise-de_/foto/imgs/13/2/1/4/7/4/6/8/bilder-der-woche-8-schwarzer-kater_16-9-d9944b7218d8b7a9.jpeg'),
+            new WordLink('Source', 'http://heise.cloudimg.io/width/700/q75.webp-lossy-75.foil1/_www-heise-de_/foto/imgs/13/2/1/4/7/4/6/8/bilder-der-woche-8-schwarzer-kater_16-9-d9944b7218d8b7a9.jpeg'),
+            new WordLink('Source', 'http://heise.cloudimg.io/width/700/q75.webp-lossy-75.foil1/_www-heise-de_/foto/imgs/13/2/1/4/7/4/6/8/bilder-der-woche-8-schwarzer-kater_16-9-d9944b7218d8b7a9.jpeg'),
+            new WordLink('Source', 'http://heise.cloudimg.io/width/700/q75.webp-lossy-75.foil1/_www-heise-de_/foto/imgs/13/2/1/4/7/4/6/8/bilder-der-woche-8-schwarzer-kater_16-9-d9944b7218d8b7a9.jpeg'),
+            new WordLink('Source', 'http://heise.cloudimg.io/width/700/q75.webp-lossy-75.foil1/_www-heise-de_/foto/imgs/13/2/1/4/7/4/6/8/bilder-der-woche-8-schwarzer-kater_16-9-d9944b7218d8b7a9.jpeg'),
+            new WordLink('Intelligence', 'http://bloggermymaze.files.wordpress.com/2009/09/klassisch_quadratisch_mittig_600.jpg'),
+            new WordLink('Intelligence', 'http://bloggermymaze.files.wordpress.com/2009/09/klassisch_quadratisch_mittig_600.jpg'),
+            new WordLink('Intelligence', 'http://bloggermymaze.files.wordpress.com/2009/09/klassisch_quadratisch_mittig_600.jpg'),
+            new WordLink('Intelligence', 'http://bloggermymaze.files.wordpress.com/2009/09/klassisch_quadratisch_mittig_600.jpg'),
+            new WordLink('Intelligence', 'http://bloggermymaze.files.wordpress.com/2009/09/klassisch_quadratisch_mittig_600.jpg'),
+            new WordLink('Intelligence', 'http://bloggermymaze.files.wordpress.com/2009/09/klassisch_quadratisch_mittig_600.jpg'),
+            new WordLink('Intelligence', 'http://bloggermymaze.files.wordpress.com/2009/09/klassisch_quadratisch_mittig_600.jpg'),
+            new WordLink('Intelligence', 'http://bloggermymaze.files.wordpress.com/2009/09/klassisch_quadratisch_mittig_600.jpg'),
         ]
 
         return Observable.of(res)
